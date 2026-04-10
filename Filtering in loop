@@ -1,0 +1,7 @@
+#filtering in a loop
+print("before")
+for value in [23, 4, 76, 13, 89]:
+    if value>20:
+        print("large number", value)
+print("After")
+       

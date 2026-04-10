@@ -1,11 +1,14 @@
-hrs= input("Enter Hours" )
-rate= input("Enter rate" )
-try:
-    h= float(hrs)
-    r= float(rate)
-except: 
-    print("Please Enter numeric input")
-if h<=40:
-    print(h*r)
-else:
-    print(40*r+(h-40)*r*1.5)         
+# a program that keeps asking the user to enter numbers,
+#  and when the user types done, it prints the largest number entered.
+largest=None
+while True:
+    value=input("Enter a number (or 'done' to finish): ").strip().lower()
+    if value=="done":
+        break
+    try:
+        num=float(value)
+        if largest is None or num>largest:
+            largest=num
+    except ValueError:
+        print("Invalid input")
+print(" The largest number is:", largest)       

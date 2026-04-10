@@ -1,0 +1,7 @@
+count=0
+sum=0
+for value in [10, 34, 42, 52, 23]:
+    count=count+1
+    sum=sum+value
+print(sum, count)    
+print(float (sum/count))

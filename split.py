@@ -1,0 +1,5 @@
+sent=input("Enter a sentence: ")
+sent=sent.split(";")
+print(len(sent))
+print(sent[0])
+print(sent[1])

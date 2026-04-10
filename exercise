@@ -1,0 +1,5 @@
+rates=[2.1, 1.8, 2.7, 3.0, 1.6, 2.4]
+for rate in rates:
+    if rate>= 2.5:
+      rate+=1
+      print("Good rate: ", rate)        
