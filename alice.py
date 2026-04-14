@@ -18,6 +18,8 @@ class Student:
             return "F"
     def is_passing(self):
         return self.marks >= 50
+    def is_failing(self):
+        return self.marks < 50
         
 s1 = Student("Alice", 85)
 s2 = Student("Bob", 90)
@@ -25,4 +27,4 @@ s3 = Student("Charlie", 80)
 s4 = Student("David", 95)
 students = [s1, s2, s3, s4]
 for student in sorted(students):
-    print(f"{student} Grade: {student.grade()} | Passing: {student.is_passing()}")
+    print(f"{student} Grade: {student.grade()} | Passing: {student.is_passing()} | Failing: {student.is_failing()}")
