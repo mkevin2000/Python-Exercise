@@ -1,18 +1,28 @@
-name: Run Alice
+name: Run alice and show output
 
 on:
   push:
     branches:
       - main
-
 jobs:
-  run-script:
+  check-alice:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
+      - name: Download my code
+        uses: actions/checkout@v3
+
+
+      - name: Install Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
-      - name: Run alice.py
+
+            
+      - name: Show what this code does 
+        run: echo "This script creates Student objects, sorts them by marks and prints each student name, grade A/B/C/F and whether they are passing."
+
+      - name: Run alice.py and show output
         run: python alice.py
+      - name:  Report if something went wrong
+        if: failure()    
+        run: echo "something failed! check the step above for the error."
