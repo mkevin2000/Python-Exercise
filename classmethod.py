@@ -11,6 +11,7 @@ class Person:
         return cls.count    
 Alice = Person("Alice")
 Bob = Person("Bob")
+charlie = Person("Charlie")
 print(Person.get_count())
 Person.reset_count()
 print(Person.get_count())
