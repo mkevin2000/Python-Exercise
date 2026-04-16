@@ -1,23 +1,27 @@
-name: classmethod test 
+name: Run classmethod and show output
+
 on:
   push:
     branches:
       - main
 jobs:
-   check-classmethod:
-      runs-on: ubuntu-latest
-      steps:
-        -name: download my code
+  check-alice:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download my code
         uses: actions/checkout@v3
-        -name: install python
+
+
+      - name: Install Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
-        -name: show what this code does
-        run: echo "This script defines a classmethod that creates an instance of the class using a string input. It then tests the classmethod by creating an instance and printing its attributes."
-        -name: run classmethod.py and show output
-        run: python classmethod.py
-        -name: report if something went wrong
-        if: failure()
-        run: echo"Kevin you can do better"
 
+            
+      - name: Show what this code does 
+        run: echo "This script defines a classmethod that creates an instance of the class using a string input. It then tests the classmethod by creating an instance and printing its attributes."
+      - name: Run classmethod.py and show output
+        run: python classmethod.py
+      - name:  Report if something went wrong
+        if: failure()    
+        run: echo "something failed! check the step above for the error."
