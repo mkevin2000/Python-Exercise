@@ -26,5 +26,13 @@ s2 = Student("Bob", 90)
 s3 = Student("Charlie", 80)
 s4 = Student("David", 95)
 students = [s1, s2, s3, s4]
+print("Students sorted by marks:")
 for student in sorted(students):
-    print(f"{student} Grade: {student.grade()} | Passing: {student.is_passing()} | Failing: {student.is_failing()}")
+    print(student)
+print("\nGrades:")
+for student in students:
+    print(f"{student.name} has grade {student.grade()}.")
+print("\nPassing students:")        
+for student in students:
+    if student.is_passing():
+        print(f"{student.name} is passing.")
